@@ -1,0 +1,75 @@
+{
+    "name": "app-projudi-dev",
+    "version": "1.0.0",
+    "description": "Consulta Andamento – Projudi: Consulta movimentações processuais de tribunais que utilizam o Projudi",
+    "auth": {
+        "description": {
+            "title": "Configuração de Acesso",
+            "body": "Configure suas credenciais para acessar o serviço.",
+            "footer": "As credenciais são armazenadas com segurança.",
+            "link": ""
+        },
+        "params": [            {
+                "name": "whomToken",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "Token do Whom"
+            },
+            {
+                "name": "whomExtensionId",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "ID da Extensão do Whom"
+            }        
+        ]
+    },
+    "functions": {
+        "consultarProcesso": {
+            "script": "dist/consultarProcesso.js",
+            "description": "Consulta processo no Projudi",
+            "category": "judicial",
+            "values": {
+                "termo": "exemplo",
+                "filtro": "todos"
+            },
+            "params": [
+                {
+                    "name": "termo",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Termo de consulta"
+                },
+                {
+                    "name": "filtro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": false,
+                    "label": "Filtro de resultados"
+                }
+            ]        },
+        "obterDocumento": {
+            "script": "dist/obterDocumento.js",
+            "description": "Obtém documento do processo no Projudi",
+            "category": "judicial",
+            "values": {
+                "parametro": "valor"
+            },
+            "params": [
+                {
+                    "name": "parametro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Parâmetro principal"
+                }
+            ]        }    },
+    "config": {
+        "timeout": 60000,
+        "max_retries": 3,
+        "cache_ttl": 3600
+    },
+    "mcp": true
+}
