@@ -28,6 +28,7 @@
     },
     "functions": {
         "consultarProcesso": {
+            "name": "Consultar Processo - Projudi",
             "script": "dist/consultarProcesso.js",
             "description": "Consulta processo no Projudi",
             "category": "judicial",
@@ -59,6 +60,7 @@
             ]
         },
         "obterDocumento": {
+            "name": "Obter Documento - Projudi",
             "script": "dist/obterDocumento.js",
             "description": "Obtém documento do processo no Projudi",
             "category": "judicial",
