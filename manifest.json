@@ -9,7 +9,8 @@
             "footer": "As credenciais são armazenadas com segurança.",
             "link": ""
         },
-        "params": [            {
+        "params": [
+            {
                 "name": "whomToken",
                 "type": "string",
                 "inputType": "text",
@@ -22,7 +23,7 @@
                 "inputType": "text",
                 "required": true,
                 "label": "ID da Extensão do Whom"
-            }        
+            }
         ]
     },
     "functions": {
@@ -33,6 +34,12 @@
             "values": {
                 "termo": "exemplo",
                 "filtro": "todos"
+            },
+            "help": {
+                "title": "Como usar a função consultarProcesso",
+                "body": "Use esta função para consultar informações cadastrais de processos no sistema Projudi utilizando um termo de consulta obrigatório e um filtro opcional para refinar os resultados.",
+                "footer": "",
+                "link": ""
             },
             "params": [
                 {
@@ -49,13 +56,20 @@
                     "required": false,
                     "label": "Filtro de resultados"
                 }
-            ]        },
+            ]
+        },
         "obterDocumento": {
             "script": "dist/obterDocumento.js",
             "description": "Obtém documento do processo no Projudi",
             "category": "judicial",
             "values": {
                 "parametro": "valor"
+            },
+            "help": {
+                "title": "Como usar a função obterDocumento",
+                "body": "Use esta função para obter documentos específicos de um processo no sistema Projudi. Forneça o parâmetro necessário para identificar o documento desejado.",
+                "footer": "",
+                "link": ""
             },
             "params": [
                 {
@@ -65,7 +79,9 @@
                     "required": true,
                     "label": "Parâmetro principal"
                 }
-            ]        }    },
+            ]
+        }
+    },
     "config": {
         "timeout": 60000,
         "max_retries": 3,
